@@ -16,14 +16,18 @@ This convenience utility script downloads the zipped repository locally and
 extracts only the contents of `website/docs/*` so you can enjoy the
 terminal/editor goodness that we all know and love, like:
 
-- Using vim's built-in `:grep "<pattern>"`, then navigate through results with `:cnext`, `:cprev`, `:copen`
-  - Or with [fzf.vim](https://github.com/junegunn/fzf.vim) plugin for interactive fuzzy searching in vim: `:Files`, `:Rg`, `:Tags`
+- Using vim's built-in `:grep "<pattern>"`, then navigate through results with
+  `:cnext`, `:cprev`, `:copen`
+  - Or with [fzf.vim](https://github.com/junegunn/fzf.vim) plugin for
+    interactive fuzzy searching in vim: `:Files`, `:Rg`, `:Tags`
 - Using [glow](https://github.com/charmbracelet/glow) markdown viewer CLI
 - Using VS Code with [Go to Symbol](https://code.visualstudio.com/Docs/editor/editingevolved#_go-to-symbol)
 
 ### Demo
 
-![demo](./assets/demo.mov)
+![demo](./assets/out.gif)
+
+_Recorded using [vhs](https://github.com/charmbracelet/vhs)_
 
 ## Install
 
@@ -38,8 +42,10 @@ You may need to install additional dependencies if they don't exist on your syst
 
 `terradoc` accepts 3 arguments:
 
-- provider: `aws` (default), `google`, `azure`, ...etc. Any provider from <https://registry.terraform.io/browse/providers> should work
-- refs: `heads` (default) or `tags`. If downloading docs for a tagged version, choose `tags` then specify a version (see next argument)
+- provider: `aws` (default), `google`, `azure`, ...etc. Any provider from
+  <https://registry.terraform.io/browse/providers> should work
+- refs: `heads` (default) or `tags`. If downloading docs for a tagged version,
+  choose `tags` then specify a version (see next argument)
 - version: `main` (default) or `vX.Y.Z`
 
 ### Examples
