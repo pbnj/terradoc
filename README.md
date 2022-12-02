@@ -16,8 +16,8 @@ This convenience utility script downloads the zipped repository locally and
 extracts only the contents of `website/docs/*` so you can enjoy the
 terminal/editor goodness that we all know and love, like:
 
-- Using vim's built-in `:grep "<pattern>"`, then navigate through results with
-  `:cnext`, `:cprev`, `:copen`
+- Using vim's built-in `:grep "<regex>"`, then navigate through results with
+  `:cnext`, `:cprev`, `:copen`, or `:Cfilter <regex>`
   - Or with [fzf.vim](https://github.com/junegunn/fzf.vim) plugin for
     interactive fuzzy searching in vim: `:Files`, `:Rg`, `:Tags`
 - Using [glow](https://github.com/charmbracelet/glow) markdown viewer CLI
