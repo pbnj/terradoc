@@ -4,16 +4,17 @@
 # Requires: curl, unzip
 
 PROVIDER="${1:-aws}" # or "google", "azure", ...etc. See https://registry.terraform.io/browse/providers
-REFS="${2:-heads}"   # or "tags"
-VERSION="${3:-main}" # or "v4.44.0"
+AUTHOR="${2:-hashicorp}" # or "databricks", "Snowflake-Labs", etc.
+REFS="${3:-heads}"   # or "tags"
+VERSION="${4:-main}" # or "v4.44.0"
 
 TERRADOC_DOWNLOAD_DIR_PREFIX="/tmp"
 TERRADOC_DOWNLOAD_DIR="terraform-provider-${PROVIDER}-${VERSION}"
 
 if ! [[ -d "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}" ]]; then
-	echo "Downloading https://github.com/hashicorp/terraform-provider-${PROVIDER}/archive/refs/${REFS}/${VERSION}.zip ..."
-	curl -Lo "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}.zip" "https://github.com/hashicorp/terraform-provider-${PROVIDER}/archive/refs/${REFS}/${VERSION}.zip"
-	unzip "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}.zip" "${TERRADOC_DOWNLOAD_DIR}/website/docs/*" -d "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}"
+	echo "Downloading https://github.com/${AUTHOR}/terraform-provider-${PROVIDER}/archive/refs/${REFS}/${VERSION}.zip ..."
+	curl -Lo "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}.zip" "https://github.com/${AUTHOR}/terraform-provider-${PROVIDER}/archive/refs/${REFS}/${VERSION}.zip"
+	unzip "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}.zip" "${TERRADOC_DOWNLOAD_DIR}*/docs/*" -d "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}"
 fi
 
 ${EDITOR:-vim} "${TERRADOC_DOWNLOAD_DIR_PREFIX}/${TERRADOC_DOWNLOAD_DIR}"
