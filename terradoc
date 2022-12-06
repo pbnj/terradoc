@@ -3,8 +3,8 @@
 # Download terraform provider docs to consume them locally.
 # Requires: curl, unzip
 
-PROVIDER="${1:-aws}" # or "google", "azure", ...etc. See https://registry.terraform.io/browse/providers
-AUTHOR="${2:-hashicorp}" # or "databricks", "Snowflake-Labs", etc.
+AUTHOR="${1:-hashicorp}" # or "databricks", "Snowflake-Labs", etc. Any terraform registry namespace or GitHub organization should work
+PROVIDER="${2:-aws}" # or "google", "azure", ...etc. See https://registry.terraform.io/browse/providers
 REFS="${3:-heads}"   # or "tags"
 VERSION="${4:-main}" # or "v4.44.0"
 
