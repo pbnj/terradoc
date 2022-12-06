@@ -40,10 +40,12 @@ You may need to install additional dependencies if they don't exist on your syst
 
 ## Usage
 
-`terradoc` accepts 3 arguments:
+`terradoc` accepts the following arguments:
 
 - provider: `aws` (default), `google`, `azure`, ...etc. Any provider from
   <https://registry.terraform.io/browse/providers> should work
+- author: `hashicorp` (default), or any registry.terraform.io namespace, or
+  github organization.
 - refs: `heads` (default) or `tags`. If downloading docs for a tagged version,
   choose `tags` then specify a version (see next argument)
 - version: `main` (default) or `vX.Y.Z`
