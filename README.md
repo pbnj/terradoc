@@ -51,7 +51,7 @@ You may need to install additional dependencies if they don't exist on your syst
 - version: `main` (default) or `vX.Y.Z`
 
 `terradoc` will use your `$EDITOR` to open/view the extracted contents. You may
-override this to something like in a one-liner. See examples below.
+override this to something else in a one-liner. See examples below.
 
 ### Examples
 
