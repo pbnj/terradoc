@@ -50,14 +50,22 @@ You may need to install additional dependencies if they don't exist on your syst
   choose `tags` then specify a version (see next argument)
 - version: `main` (default) or `vX.Y.Z`
 
+`terradoc` will use your `$EDITOR` to open/view the extracted contents. You may
+override this to something like in a one-liner. See examples below.
+
 ### Examples
 
 ```shell
 $ terradoc
-# will download the main branch of terraform-provider-aws
+# will download the main branch of hashicorp/terraform-provider-aws repository
+# and extract content of website/docs/*
 
-$ terradoc google tags v4.44.1
-# will download v4.44.1 tagged branch of terraform-provider-google
+$ terradoc digitalocean digitalocean tags v2.25.2
+# will download v2.25.2 tagged branch of digitalocean/terraform-provider-digitalocean repository
+# and extract content of docs/*
+
+$ EDITOR=glow terradoc digitalocean digitalocean tags v2.25.2
+# will do the same as the previous example, but view the extracted content with https://github.com/charmbracelet/glow
 ```
 
 ## License
